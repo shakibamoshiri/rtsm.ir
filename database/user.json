@@ -1,9 +1,9 @@
 {
-  "homeTitle": "NodePost | Blogging in the Fun Way",
+  "homeTitle": "Real Time Service Monitoring",
   "baseURL": "",
-  "statAddress": "/stat",
+  "statAddress": "",
   "git": {
-    "username" : "",
-    "repository": ""
+    "username" : "k-five",
+    "repository": "https://github.com/k-five/rtsm.ir"
   }
 }
