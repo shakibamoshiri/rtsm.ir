@@ -1,0 +1,9 @@
+{
+  "homeTitle": "Real Time Service Monitoring",
+  "baseURL": "",
+  "statAddress": "",
+  "git": {
+    "username" : "k-five",
+    "repository": "rtsm.ir"
+  }
+}

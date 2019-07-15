@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <title>Real Time Service monitoring</title>
+    <meta name="keywords" content="real-time, service, server, microservice, monitoring, ci, cd">
+    <meta name="author" content="Shakiba Moshiri">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="real time [server | service | microservice] monitoring is a way to monitor our servers, services, microservices in real-time to speed up our pipleline">
+    <link rel="stylesheet" type="text/css" href="/build/css/desktop.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/css/prism-5.css">
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <style>
+        div.header {
+            background-color: #0cf;
+            min-height: 100%;
+        }
+        div.content-r {
+            margin: auto;
+            text-align: center;
+        }
+        h1, a {
+            color: #fff;
+            transition: color 250ms ease 50ms;
+        }
+        h1 > span{
+        }
+        h4 > span {
+            color: #fff;
+        }
+        h1:hover,
+        a:hover {
+            color: #000;
+        }
+        div.content-r > h1:last-child {
+            text-align: center;
+            border: 1px #fff solid;
+            width: 200px;
+            padding: 5px;
+            margin: auto;
+            border-radius: 10px;
+        }
+        div.footer {
+            display: none;
+        }
+    </style>
+</head>
+<body class="line-numbers">
+
+    <div class="header">
+        <div class="content-r">
+          <h1>
+            <span>R</span>eal <span>T</span>ime <span>S</span>ervice <span>M</span>onitoring
+          </h1>
+          <h4>Watch your [ <span>Servers</span> | <span>Services </span>| <span>Microservcies </span> ] in real-time</h4>
+          <h4>to speed up your [ <span>team </span> | <span>developers </span> | <span>company </span >]  CI / CD pipeline </h4>
+          <h1><a href="demo">demo</a></h1>
+        </div>
+    </div>
+    <script>
+    window.onload = function(){
+       document.querySelector( "div.footer" ).remove(); 
+    }
+    </script>
+</body>
+</html>
