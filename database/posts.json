@@ -1,13 +1,9 @@
 {
     "home": {
         "demo": {
-            "server": {
-                "vmstat": ""
-            },
-            "microservice": {
-                "jsfun.ir": "",
-                "msfun.ir": ""
-            }
+            "vmstat": "",
+            "jsfun.ir": "",
+            "msfun.ir": ""
         }
     }
 }
