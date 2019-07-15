@@ -15,7 +15,7 @@ body {
 
 .header {
   height: 300px;
-  background-color: #fe0;
+  background-color: #0cf;
   display: flex; }
   .header .content-r {
     overflow: hidden; }
@@ -24,17 +24,23 @@ body {
       white-space: nowrap;
       display: block;
       overflow: hidden; }
+  .header hr {
+    border-color: #fff; }
 
 .footer {
-  background-color: #fe0;
+  background-color: #0cf;
   display: flex; }
 
+main,
 .main {
   margin: 100px 0 100px 0; }
+  main a,
+  .main a {
+    color: #c00; }
 
 a {
   text-decoration: none;
-  color: #c00; }
+  color: #fff; }
 
 .article {
   box-shadow: 0 0 5px #ccc;
@@ -53,6 +59,18 @@ p {
 .update > i {
   margin-top: 20px;
   display: inline-block; }
+
+.edit-on-github a {
+  color: #c00; }
+
+pre.output-log {
+  background-color: #f1f1f1;
+  margin: 0;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: auto; }
+  pre.output-log code {
+    display: block; }
 
 /*
 .language-javascript.line-numbers > code:first-of-type::after {

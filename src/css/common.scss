@@ -3,7 +3,7 @@ body { position: relative; overflow: auto; height: 100%;  font-family: 'Montserr
 
 .header {
     height: 300px;
-    background-color: #fe0;
+    background-color: #0cf;
     display: flex;
     .content-r {
         overflow: hidden;
@@ -14,20 +14,27 @@ body { position: relative; overflow: auto; height: 100%;  font-family: 'Montserr
             overflow: hidden;
         }
     }
+    hr {
+        border-color: #fff;
+    }
 }
 
 .footer {
-    background-color: #fe0;
+    background-color: #0cf;
     display: flex;
 }
 
+main,
 .main {
     margin: 100px 0 100px 0;
+    a {
+        color: #c00;
+    }
 }
 
 a {
     text-decoration: none;
-    color: #c00;
+    color: #fff;
 }
 
 .article {
@@ -53,6 +60,22 @@ p {
   display: inline-block;
 }
 
+.edit-on-github {
+    a {
+        color: #c00;
+    }
+}
+
+pre.output-log {
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: auto;
+    code {
+        display: block;
+    }
+}
 /*
 .language-javascript.line-numbers > code:first-of-type::after {
   content: "";

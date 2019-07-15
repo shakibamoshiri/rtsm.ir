@@ -31,10 +31,10 @@ function checkBundleFile( path ){
         });
         return list;
     }
+    return [];
 }
 
 const bundledFiles = checkBundleFile( OUTPUT_PATH );
-
 /*
     Finding all main.js files inside ENTRY_PATH
     recursively and return an array of them
