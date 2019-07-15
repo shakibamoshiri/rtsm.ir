@@ -54,7 +54,7 @@ function createDir( notExistDirs, routeDirs, validRequest, homePath, rootPath ){
         const names = path.match( /\/?[A-Za-z0-9_.-]+/g );
         const tmp = path.replace( homePath, "/" );
         const currentPath = tmp === "/" ? baseURL + tmp : baseURL + tmp + "/";
-        const gitPath = currentPath;
+        const gitPath = homePath.source.match( /\/?[A-Za-z0-9_.-]+/g ).pop() + currentPath;
 
         // current title is the last on on the name with has "/" at the begging
         // so "/" should be replaced with ""
