@@ -23,7 +23,7 @@ ws.onmessage = function( payload ){
 }
 
 function displayData( data ){
-    const pre = document.getElementById( "jsfun.ir" );
+    const pre = document.getElementById( "jsfun-ir" );
     const code = document.createElement( "code" );
     code.textContent = data;
     pre.appendChild( code );
