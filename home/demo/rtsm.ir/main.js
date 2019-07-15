@@ -13,10 +13,10 @@ if(!( "WebSocket" in window )){
 
 const ws = new WebSocket( "ws://localhost:3330" );
 ws.onopen = function(){
-    log( "msfun web socket was opened" );
+    log( "rtsm web socket was opened" );
 }
 ws.onclose = function(){
-    log( "msfun web socket was closed" );
+    log( "rtsm web socket was closed" );
 }
 ws.onmessage = function( payload ){
     displayData( payload.data );
@@ -33,6 +33,6 @@ const description = <Fragment>
     <p>Here is the log of <a target="_blank" href="http://rtsm.ir">rtsm.ir</a> which is a node js microserice for managing the blog.</p>
     <p>Do not close this page and meanwhile open <a target="_blank" href="http://rtsm.ir">rtsm.ir</a> in a separate window with your browser.</p>
     <p>Navigate between pages (= links) and watch here at the same time.</p>
-    <h3 class="sub-title">msfun.ir log on the server right now:</h3>
+    <h3 class="sub-title">rtsm.ir log on the server right now:</h3>
 </Fragment>; 
 render( description, document.getElementById( "description" ) );
