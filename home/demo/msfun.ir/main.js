@@ -11,7 +11,7 @@ if(!( "WebSocket" in window )){
     exit;
 }
 
-const ws = new WebSocket( "ws://localhost:3332" );
+const ws = new WebSocket( "ws://localhost:3340" );
 ws.onopen = function(){
     log( "msfun web socket was opened" );
 }
@@ -23,7 +23,7 @@ ws.onmessage = function( payload ){
 }
 
 function displayData( data ){
-    const pre = document.getElementById( "msfun-ir" );
+    const pre = document.getElementById( "servie-logs" );
     const code = document.createElement( "code" );
     code.textContent = data;
     pre.appendChild( code );
