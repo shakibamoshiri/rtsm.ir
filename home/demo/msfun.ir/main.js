@@ -33,6 +33,6 @@ const description = <Fragment>
     <p>Here is the log of <a target="_blank" href="http://msfun.ir">msfun.ir</a> which is a node js microserice for managing the blog.</p>
     <p>Do not close this page and meanwhile open <a target="_blank" href="http://msfun.ir">msfun.ir</a> in a separate window with your browser.</p>
     <p>Navigate between pages (= links) and watch here at the same time.</p>
-    <h3 class="sub-title">msfun.ir log on the server right now:</h3>
+    <h3 class="sub-title">Mointoring logs and git merge in real-time:</h3>
 </Fragment>; 
 render( description, document.getElementById( "description" ) );
