@@ -51,7 +51,7 @@ function displayData( data, target ){
 
 webSocketManager( services.logs );
 webSocketManager( services.build );
-webSocketManager( services.status );
+// webSocketManager( services.status );
 
 const description = <Fragment>
     <p>Here is the log of <a target="_blank" href="http://rtsm.ir">rtsm.ir</a> which is a node js microserice for managing this dmoe.</p>
