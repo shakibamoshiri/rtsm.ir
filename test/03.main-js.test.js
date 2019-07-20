@@ -1,10 +1,11 @@
 const fs = require( "fs" );
 const path = require( "path" );
+const assert = require('assert');
 const log = console.log;
 
 const rootPost = (function(){
     try {
-        return JSON.parse( fs.readFileSync( __dirname + "/database/posts.json" , "utf8" ) );
+        return JSON.parse( fs.readFileSync( __dirname + "/../database/posts.json" , "utf8" ) );
     } catch( exception ){
         log( exception.message );
         log( "./database/posts.json is required!" );
@@ -13,9 +14,9 @@ const rootPost = (function(){
 }());
 
 const HOME_DIR = Object.keys( rootPost )[ 0 ];
-const ENTRY_PATH = __dirname + "/" + HOME_DIR;
+const ENTRY_PATH = __dirname + "/../" + HOME_DIR;
 
-const OUTPUT_DIR = "/build/react/";
+const OUTPUT_DIR = "/../build/react/";
 const OUTPUT_PATH = __dirname + OUTPUT_DIR;
 
 /*
@@ -35,6 +36,8 @@ function checkBundleFile( path ){
 }
 
 const bundledFiles = checkBundleFile( OUTPUT_PATH );
+
+// log( "bundledFiles\n", bundledFiles );
 /*
     Finding all main.js files inside ENTRY_PATH
     recursively and return an array of them
@@ -55,21 +58,24 @@ function readDirRec( path, list = [] ){
    return list;
 }
 
+
 /*
     just return main.js files
     then if skip those that already in OUTPUT_PATH
     and store the rest on an object and return it
 */
-const mainJsFiles = readDirRec( ENTRY_PATH ).filter(function( file ){
+const mainJsFiles =
+readDirRec( ENTRY_PATH ).filter(function( file ){
     return path.basename( file ) === "main.js";
 });
+// log( "mainJsFiles\n", mainJsFiles );
 
 const jsNotBundled = mainJsFiles.reduce(function( result, name ){
     const temp = name.split( "/" );
     const key = temp.slice( temp.length - 2, -1 ).pop();
     if( bundledFiles.length ){
         const foundAny = bundledFiles.every(function( bundleName ){
-            return bundleName !== ( key + ".bundle.js" )
+            return !bundleName.startsWith( key )
         });
         if( foundAny ){
             result[ key ] = name;
@@ -80,34 +86,16 @@ const jsNotBundled = mainJsFiles.reduce(function( result, name ){
     return result;
 }, {});
 
-/*
-    when the returned object by readDirRec() had no
-    property or all the file already have been bundled
-    do nothing.
-*/
-if( Object.keys( jsNotBundled ).length === 0 ){
-    log( "webpack exited in either case of:" );
-    log( `1. no main.js files found in ${ ENTRY_PATH  }` );
-    log( `2. you already have bundled files in ${ OUTPUT_PATH  }` );
-    process.exit( 0 );
-}
+// log( "jsNotBundled\n", jsNotBundled );
 
-module.exports = {
-    mode: 'production',
-    entry: jsNotBundled,
-    output: {
-        path: OUTPUT_PATH,
-        filename: '[name].bundle.js',
-    },
-    module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader"
-                }
-            }
-        ]
-    },
-};
+describe( "main.js files", function(){
+    const rest = mainJsFiles.length - bundledFiles.length;
+
+    it( `mainJsFiles (${ mainJsFiles.length }) minus bundledFiles (${ bundledFiles.length }) should be equal to ${ rest }`, function(){
+        assert.equal( rest, Object.keys( jsNotBundled ).length );
+    });
+
+    it(`for (${ mainJsFiles.length  }) mainJsFiles we should have (${ mainJsFiles.length  }) bundled js file in build/react/`, function(){
+        assert.equal( mainJsFiles.length, bundledFiles.length );
+    });
+})
