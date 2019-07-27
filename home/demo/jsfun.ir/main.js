@@ -54,7 +54,7 @@ webSocketManager( services.build );
 // webSocketManager( services.status );
 
 const description = <Fragment>
-    <p>Here is the log of <a target="_blank" href="http://jsfun.ir">jsfun.ir</a> which is a node js microserice for managing the jsfun.ir blog.</p>
+    <p>Here is the log of <a target="_blank" href="http://jsfun.ir">jsfun.ir</a> which is a node js microservice for managing the jsfun.ir blog.</p>
     <p>Do not close this page and meanwhile open <a target="_blank" href="http://jsfun.ir">jsfun.ir</a> in a separate window with your browser.</p>
     <p>Navigate between pages (= links) and watch here at the same time.</p>
 </Fragment>; 
